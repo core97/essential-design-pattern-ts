@@ -6,7 +6,8 @@
   "scripts": {
     "exec": "ts-node ./src/index.ts",
     "exec:factory": "ts-node ./src/patterns/factory.ts",
-    "exec:singleton": "ts-node ./src/patterns/singleton.ts"
+    "exec:singleton": "ts-node ./src/patterns/singleton.ts",
+    "exec:observer": "ts-node ./src/patterns/observer.ts"
   },
   "keywords": [],
   "author": "",
