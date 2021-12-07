@@ -1,4 +1,4 @@
-import { BaseRecord, Database, Recipe } from "./models";
+import { BaseRecord, Database, Recipe } from "../models";
 
 // Factory pattern
 function createDatabase<T extends BaseRecord>(type: "memory" | "mongo") {

@@ -1,4 +1,4 @@
-import { BaseRecord, Recipe, Database } from "./models";
+import { BaseRecord, Recipe, Database } from "../models";
 
 function createDatabase<T extends BaseRecord>() {
   class InMemoryDatabase implements Database<T> {

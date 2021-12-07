@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "exec": "ts-node ./src/index.ts",
-    "exec:factory": "ts-node ./src/index.ts",
-    "exec:singleton": "ts-node ./src/index.ts"
+    "exec:factory": "ts-node ./src/patterns/factory.ts",
+    "exec:singleton": "ts-node ./src/patterns/singleton.ts"
   },
   "keywords": [],
   "author": "",
