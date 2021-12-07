@@ -25,17 +25,18 @@ export interface Database<T extends BaseRecord> {
   get(id: string): T;
 }
 
-export interface DatabaseWithObserbers<T extends BaseRecord> {
-  set(newValue: T): void;
-  get(id: string): T;
-
+export interface DatabaseWithObserbers<T extends BaseRecord>
+  extends Database<T> {
   onBeforeAdd(listener: Listener<BeforeSetEvent<T>>): () => void;
   onAfterAdd(listener: Listener<AfterSetEvent<T>>): () => void;
 }
 
-export interface DatabaseWithVisitors<T extends BaseRecord> {
-  set(newValue: T): void;
-  get(id: string): T;
-
+export interface DatabaseWithVisitors<T extends BaseRecord>
+  extends Database<T> {
   visit(visitor: (item: T) => void): void;
+}
+
+export interface DatabaseWithStrategy<T extends BaseRecord>
+  extends Database<T> {
+  selectHigher(scoreStrategy: (item: T) => number): T | undefined;
 }

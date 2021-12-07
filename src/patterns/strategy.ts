@@ -1,14 +1,7 @@
-import {
-  BaseRecord,
-  Recipe,
-  Database,
-  Listener,
-  BeforeSetEvent,
-  AfterSetEvent,
-} from "../models";
+import { BaseRecord, Recipe, DatabaseWithStrategy } from "../models";
 
 function createDatabase<T extends BaseRecord>() {
-  class InMemoryDatabase implements Database<T> {
+  class InMemoryDatabase implements DatabaseWithStrategy<T> {
     private db: Record<string, T> = {};
 
     static instance: InMemoryDatabase = new InMemoryDatabase();
@@ -63,8 +56,8 @@ RecipeDB.instance.set({
   name: "lentejas",
 });
 
-const recipeWithMoreCalories = RecipeDB.instance.selectHigher(({ kcal }) => kcal);
+const recipeWithMoreCalories = RecipeDB.instance.selectHigher(
+  ({ kcal }) => kcal
+);
 
-console.log(`Receta con más caloría: ${recipeWithMoreCalories?.name}`)
-
-
+console.log(`Receta con más caloría: ${recipeWithMoreCalories?.name}`);
