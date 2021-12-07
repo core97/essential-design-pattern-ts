@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "exec": "ts-node ./src/index.ts"
+    "exec": "ts-node ./src/index.ts",
+    "exec:factory": "ts-node ./src/index.ts"
   },
   "keywords": [],
   "author": "",
