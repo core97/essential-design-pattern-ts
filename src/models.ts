@@ -32,3 +32,10 @@ export interface DatabaseWithObserbers<T extends BaseRecord> {
   onBeforeAdd(listener: Listener<BeforeSetEvent<T>>): () => void;
   onAfterAdd(listener: Listener<AfterSetEvent<T>>): () => void;
 }
+
+export interface DatabaseWithVisitors<T extends BaseRecord> {
+  set(newValue: T): void;
+  get(id: string): T;
+
+  visit(visitor: (item: T) => void): void;
+}
