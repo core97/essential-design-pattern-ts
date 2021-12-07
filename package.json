@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "exec": "ts-node ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "exec:factory": "ts-node ./src/patterns/factory.ts",
     "exec:singleton": "ts-node ./src/patterns/singleton.ts",
     "exec:observer": "ts-node ./src/patterns/observer.ts",
-    "exec:visitor": "ts-node ./src/patterns/visitor.ts"
+    "exec:visitor": "ts-node ./src/patterns/visitor.ts",
+    "exec:strategy": "ts-node ./src/patterns/strategy.ts"
   },
   "keywords": [],
   "author": "",
